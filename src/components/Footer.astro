@@ -3,11 +3,55 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
-</footer>
-<style>
+	<div class="container">
+		<!-- <div class="links">
+			<a href="#">Linkedin</a>
+		</div> -->
+		<hr/>
+		<div class="year">
+			<span class="year-text">{today.getFullYear()}</span>
+		  </div>
+	</div>
+  </footer>
+  
+  <style>
 	footer {
-		padding: 25px;
-		text-align: center;
+	  position: absolute;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  padding: 25px;
+	  text-align: center;
 	}
-</style>
+	
+	.container {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	}
+	
+	.links {
+	  display: flex;
+	}
+	
+	.links a {
+	  margin-left: 10px;
+	}
+	
+	.year {
+	  text-align: center;
+	}
+	
+	.year-text {
+	  font-weight: bold;
+	}
+	
+	hr {
+	  flex: 1;
+	  height: 1px;
+	  margin: 0 20px;
+	  border: none;
+	  background-color: #ccc;
+	}
+  </style>
+  
