@@ -1,7 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
@@ -36,19 +35,63 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
+			<div>
+				<h1>Últimas publicações</h1>
+			</div>
 			<section>
 				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<FormattedDate date={post.data.pubDate} />
-								<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-							</li>
-						))
-					}
+				  {
+					posts.map((post) => (
+					  <li>
+						<h3><a class="post-title" href={`/blog/${post.slug}/`}>{post.data.title}</a></h3>
+						<span class="date"><FormattedDate date={post.data.pubDate} /></span>
+					  </li>
+					))
+				  }
 				</ul>
-			</section>
+			  </section>
 		</main>
-		<Footer />
+		<!-- <Footer /> -->
 	</body>
 </html>
+<style>
+	section {
+	  background-color: #f8f8f8;
+	  padding: 20px;
+	}
+	
+	ul {
+	  list-style: none;
+	  margin: 0;
+	  padding: 0;
+	}
+	
+	li {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  border-bottom: 1px solid #ccc;
+	  padding: 10px;
+	}
+	
+	li:last-child {
+	  border-bottom: none;
+	}
+	
+	.date {
+	  font-size: 14px;
+	  color: #999;
+	  margin-right: 10px;
+	}
+	
+	.post-title {
+	  font-size: 16px;
+	  color: #333;
+	  text-decoration: none;
+	  transition: color 0.3s ease;
+	}
+	
+	.post-title:hover {
+	  color: #0077cc;
+	}
+  </style>
