@@ -17,5 +17,10 @@ However, it's important to note that concurrent access to a database can also le
 
 # Introduction
 
-Consider the scenario of a computer with a single core where four programs are currently running simultaneaously. To archive this, the computer must utilize concurrency and virtual paralelism techniques to handle the four programs running simultaneousy and the associated instructions, despite the computer's capacity being limited to executing only one instruction at a time. Scheduling algorithms are responsable to determine which program's instruction gonna be executed next.
-Virtual paralelism is a simulation of multiple proccess or threads in a single processor or core.
+Consider the scenario of a computer with a single core where four programs are currently running simultaneaously. To deal with it, the computer must utilize concurrency and *virtual paralelism techniques to handle the four programs running simultaneousy and the associated instructions, despite the computer's capacity being limited to executing only one instruction at a time.
+The processor has a unity to thread management (Thread Management Unit - TMU) which make the management access of threads to the CPU and the Scheduling algorithms are responsable to determine which program's instruction gonna be executed next.
+
+* Virtual parallelism is a simulation of multiple processes or threads in a single processor or core.
+
+Consider another scenario of a computer with two cores where four programs are currently running simultaneously. In this case, program 1 and program 2 are using core 1, and program 3 and program 4 are using core 2. 
+Let's assume that program 1 has high priority; then, it can be assigned to the entire core 1 while the other programs share core 2.
