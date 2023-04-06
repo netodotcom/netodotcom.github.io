@@ -52,8 +52,8 @@
 	Mar 31, 2023
 </time>
 				<div class="last-updated-on astro-BVZIHDZO">
-							Last updated on <time datetime="2023-04-05T03:00:00.000Z">
-	Apr 5, 2023
+							Last updated on <time datetime="2023-04-06T03:00:00.000Z">
+	Apr 6, 2023
 </time>
 						</div>
 				<hr class="astro-BVZIHDZO">
@@ -70,6 +70,50 @@ The processor has a unity to thread management (Thread Management Unit - TMU) wh
 </ul>
 <p>Consider another scenario of a computer with two cores where four programs are currently running simultaneously. In this case, program 1 and program 2 are using core 1, and program 3 and program 4 are using core 2.
 Let’s assume that program 1 has high priority; then, it can be assigned to the entire core 1 while the other programs share core 2.</p>
+<h1 id="threads-synchronization">Threads synchronization</h1>
+<p>Techniques like lock, semaphore and synchronization can be utilized to manage resources and resolve concurrency problems effectively.</p>
+<p>Click <a href="https://github.com/netodotcom/threads/tree/main/Conflicts" target="_blank" rel="noopener noreferrer">here</a> to see these examples and understand how they can be used.</p>
+<h1 id="threads-states">Threads states</h1>
+<p>Threads can be in some states:</p>
+<ul>
+<li>
+<h4 id="new">New</h4>
+<blockquote>
+<p>When thread has been created but not yet started.</p>
+</blockquote>
+</li>
+<li>
+<h4 id="runnable">Runnable</h4>
+<blockquote>
+<p>When thread has been started and ready to be executed but it may not be currently running.</p>
+</blockquote>
+</li>
+<li>
+<h4 id="blocked">Blocked</h4>
+<blockquote>
+<p>When thread is temporary unable to run for specific reason.</p>
+</blockquote>
+</li>
+<li>
+<h4 id="waiting">Waiting</h4>
+<blockquote>
+<p>When thread is waiting for a condition or event to occur.</p>
+</blockquote>
+</li>
+<li>
+<h4 id="timed-waiting">Timed waiting</h4>
+<blockquote>
+<p>When thread is waiting for a specific period of time.</p>
+</blockquote>
+<p><a href="https://github.com/netodotcom/threads/blob/main/Sleep/Sleep.java" target="_blank" rel="noopener noreferrer">Here</a> is an example of using the ‘sleep’ method to put a thread in timed waiting state.</p>
+</li>
+<li>
+<h4 id="terminated">Terminated</h4>
+<blockquote>
+<p>When thread finish because it was completed or termined due to an exepction or error.</p>
+</blockquote>
+</li>
+</ul>
 			</article>
 		</main>
 		<footer class="astro-SZ7XMLTE">

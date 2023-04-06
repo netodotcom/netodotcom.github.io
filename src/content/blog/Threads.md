@@ -2,7 +2,7 @@
 title: "Threads"
 description: "What are threads and how to deal with it"
 pubDate: "Mar 31 2023"
-updatedDate: "Apr 05 2023"
+updatedDate: "Apr 06 2023"
 ---
 
 <a href="https://github.com/netodotcom/threads" target="_blank" rel="noopener noreferrer">Github repository</a>
@@ -24,3 +24,38 @@ The processor has a unity to thread management (Thread Management Unit - TMU) wh
 
 Consider another scenario of a computer with two cores where four programs are currently running simultaneously. In this case, program 1 and program 2 are using core 1, and program 3 and program 4 are using core 2. 
 Let's assume that program 1 has high priority; then, it can be assigned to the entire core 1 while the other programs share core 2.
+
+# Threads synchronization
+
+Techniques like lock, semaphore and synchronization can be utilized to manage resources and resolve concurrency problems effectively.
+
+Click <a href="https://github.com/netodotcom/threads/tree/main/Conflicts" target="_blank" rel="noopener noreferrer">here</a> to see these examples and understand how they can be used.
+
+# Threads states
+
+Threads can be in some states:
+
+* #### New
+    > When thread has been created but not yet started.
+
+
+* #### Runnable
+    > When thread has been started and ready to be executed but it may not be currently running.
+
+
+* #### Blocked
+    > When thread is temporary unable to run for specific reason.
+
+
+* #### Waiting
+    > When thread is waiting for a condition or event to occur.
+
+
+* #### Timed waiting
+    > When thread is waiting for a specific period of time.
+
+    <a href="https://github.com/netodotcom/threads/blob/main/Sleep/Sleep.java" target="_blank" rel="noopener noreferrer">Here</a> is an example of using the 'sleep' method to put a thread in timed waiting state.
+
+
+* #### Terminated
+    > When thread finish because it was completed or termined due to an exepction or error.
