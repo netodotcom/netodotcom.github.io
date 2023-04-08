@@ -33,6 +33,10 @@ Click <a href="https://github.com/netodotcom/threads/tree/main/Conflicts" target
 
 # Threads states
 
+A thread begins it's life cycle as new and remains in that state until it become runnable.
+Once the thread is ready to execute, it does so, and it's subsequent states may be affected by external factors, such as higher-priority threads that need to be executed or any exceptions that the thread may throw.
+Assuming no exception occurs, the thread is eventually terminated. It is possible to view many details about threads states using logs (Java has build-in support for thread logging through the ```java.util.logging```) and this topic will be discussed later.
+
 Threads can be in some states:
 
 * #### New
