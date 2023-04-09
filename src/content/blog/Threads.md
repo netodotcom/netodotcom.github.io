@@ -3,7 +3,7 @@ title: "Threads"
 description: "This post aims to provide a comprehensive understanding of threads and their pratical applications. It covers the fundamentals of threads and offers pratical guidance on how to use them effectively. This post will discuss how to use threads in a program, not at the OS level."
 pubDate: "Mar 31 2023"
 updatedDate: "Apr 09 2023"
-references: "https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/4_Threads.html, https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/"
+references: "https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/4_Threads.html, https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/, https://os.cs.luc.edu/scheduling.html"
 ---
 
 <a href="https://github.com/netodotcom/threads" target="_blank" rel="noopener noreferrer">Github repository</a>
@@ -76,3 +76,4 @@ Although the operation system (OS) is responsible for managing and scheduling th
 
 # Scheduling
 
+OS have a thread scheduling that works with its own algorithms. Each OS, such as Windows, Linux, macOS, android and others has its own unique algorithm. It's an important OS topic and you can find a good reference in this link https://os.cs.luc.edu/scheduling.html
