@@ -3,6 +3,7 @@ title: "Threads"
 description: "This post aims to provide a comprehensive understanding of threads and their pratical applications. It covers the fundamentals of threads and offers pratical guidance on how to use them effectively. This post will discuss how to use threads in a program, not at the OS level."
 pubDate: "Mar 31 2023"
 updatedDate: "Apr 09 2023"
+references: "https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/4_Threads.html, https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/"
 ---
 
 <a href="https://github.com/netodotcom/threads" target="_blank" rel="noopener noreferrer">Github repository</a>
@@ -71,4 +72,7 @@ In java, there is a priority scale ranging from 1 to 10, and constants MIN_PRIOR
 The method ```public void setPriority(x)``` can be used to set the thread's priority.
 
 Although the operation system (OS) is responsible for managing and scheduling the execution of threads based on their priorities and OTHERS FACTORS. Therefore, even if a thread has a priority defined, OS has the final say in deciding which thread to execute first.
-(This is a topic )
+
+
+# Scheduling
+
