@@ -1,8 +1,8 @@
 ---
 title: "Threads"
-description: "What are threads and how to deal with it"
+description: "This post aims to provide a comprehensive understanding of threads and their pratical applications. It covers the fundamentals of threads and offers pratical guidance on how to use them effectively. This post will discuss how to use threads in a program, not at the OS level."
 pubDate: "Mar 31 2023"
-updatedDate: "Apr 06 2023"
+updatedDate: "Apr 09 2023"
 ---
 
 <a href="https://github.com/netodotcom/threads" target="_blank" rel="noopener noreferrer">Github repository</a>
