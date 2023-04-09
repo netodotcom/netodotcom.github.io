@@ -29,8 +29,8 @@
 <meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
 		
 	<link rel="stylesheet" href="/_astro/about.b9ef5ff6.css" />
-<link rel="stylesheet" href="/_astro/about.c44f96ea.css" /></head>
-
+<link rel="stylesheet" href="/_astro/about.9f428e46.css" /></head>
+	
 	<body class="astro-BVZIHDZO">
 		<header class="astro-3EF6KSR2">
 	<h2 class="astro-3EF6KSR2">
@@ -51,13 +51,15 @@
 				<time datetime="2023-03-31T03:00:00.000Z">
 	Mar 31, 2023
 </time>
-				<p class="description astro-BVZIHDZO">This post aims to provide a comprehensive understanding of threads and their pratical applications. It covers the fundamentals of threads and offers pratical guidance on how to use them effectively. This post will discuss how to use threads in a program, not at the OS level.</p>
 				<div class="last-updated-on astro-BVZIHDZO">
 							Last updated on <time datetime="2023-04-09T03:00:00.000Z">
 	Apr 9, 2023
 </time>
-						</div>
+							</div>
 				<hr class="astro-BVZIHDZO">
+				<h3 class="astro-BVZIHDZO">References</h3>
+				<p class="references astro-BVZIHDZO">https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/4_Threads.html</p><p class="references astro-BVZIHDZO"> https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/</p><p class="references astro-BVZIHDZO"> https://os.cs.luc.edu/scheduling.html</p>
+				<p class="description astro-BVZIHDZO">This post aims to provide a comprehensive understanding of threads and their pratical applications. It covers the fundamentals of threads and offers pratical guidance on how to use them effectively. This post will discuss how to use threads in a program, not at the OS level.</p>
 				<h1>Threads</h1><p><a href="https://github.com/netodotcom/threads" target="_blank" rel="noopener noreferrer">Github repository</a></p>
 <p>Threads are the smallest unit of execution in a program, and they allow multiple tasks to be executed concurrently within the same program. In a multi-threaded application, each thread runs independently and has its own execution path, allowing for parallel processing of tasks.</p>
 <p>When working with an API that writes to a database, threads are important because they allow for concurrent database operations. This can significantly improve the performance and responsiveness of the application, as multiple threads can be used to execute database queries or write data to the database simultaneously.</p>
@@ -122,8 +124,9 @@ Assuming no exception occurs, the thread is eventually terminated. It is possibl
 <p>When a thread is created, it is possible to define its priority. If no priority is defined then the thread is assigned with normal (default).
 In java, there is a priority scale ranging from 1 to 10, and constants MIN_PRIORITY (1), NORMAL_PRIORITY (5) MAX_PRIORITY (10)
 The method <code>public void setPriority(x)</code> can be used to set the thread’s priority.</p>
-<p>Although the operation system (OS) is responsible for managing and scheduling the execution of threads based on their priorities and OTHERS FACTORS. Therefore, even if a thread has a priority defined, OS has the final say in deciding which thread to execute first.
-(This is a topic )</p>
+<p>Although the operation system (OS) is responsible for managing and scheduling the execution of threads based on their priorities and OTHERS FACTORS. Therefore, even if a thread has a priority defined, OS has the final say in deciding which thread to execute first.</p>
+<h1 id="scheduling">Scheduling</h1>
+<p>OS have a thread scheduling that works with its own algorithms. Each OS, such as Windows, Linux, macOS, android and others has its own unique algorithm. It’s an important OS topic and you can find a good reference in this link <a href="https://os.cs.luc.edu/scheduling.html">https://os.cs.luc.edu/scheduling.html</a></p>
 			</article>
 		</main>
 		<footer class="astro-SZ7XMLTE">
