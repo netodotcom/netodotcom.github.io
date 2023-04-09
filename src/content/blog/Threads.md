@@ -63,3 +63,12 @@ Threads can be in some states:
 
 * #### Terminated
     > When thread finish because it was completed or termined due to an exepction or error.
+
+# Priority
+
+When a thread is created, it is possible to define its priority. If no priority is defined then the thread is assigned with normal (default).
+In java, there is a priority scale ranging from 1 to 10, and constants MIN_PRIORITY (1), NORMAL_PRIORITY (5) MAX_PRIORITY (10)
+The method ```public void setPriority(x)``` can be used to set the thread's priority.
+
+Although the operation system (OS) is responsible for managing and scheduling the execution of threads based on their priorities and OTHERS FACTORS. Therefore, even if a thread has a priority defined, OS has the final say in deciding which thread to execute first.
+(This is a topic )
