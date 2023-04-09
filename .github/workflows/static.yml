@@ -30,7 +30,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+      - name: Check if dist directory exists
+        run: |
+          if [ ! -d ./dist ]; then
+            echo "Error: dist directory does not exist."
+            exit 1
+          fi
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
