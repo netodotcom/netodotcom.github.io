@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "version": "2.2.0",
+  "name": "neto",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
