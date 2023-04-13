@@ -18,6 +18,9 @@ export default defineConfig({
     react(),
     sitemap(),
   ],
+  styles: [
+    "./src/styles/base.css"
+  ],
   markdown: {
     remarkPlugins: [
       remarkToc,
