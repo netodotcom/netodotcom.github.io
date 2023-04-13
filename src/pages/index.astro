@@ -1,151 +1,112 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getCollection } from "astro:content";
-import FormattedDate from "../components/FormattedDate.astro";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import LinkButton from "@components/LinkButton.astro";
+import Hr from "@components/Hr.astro";
+import Card from "@components/Card";
+import getSortedPosts from "@utils/getSortedPosts";
+import slugify from "@utils/slugify";
+// import { SOCIALS } from "@config";
 
-const posts = (await getCollection("blog")).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+const posts = await getCollection("blog");
+
+const sortedPosts = getSortedPosts(posts);
+const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
+
+// const socialCount = SOCIALS.filter(social => social.active).length;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
-			ul li :global(time) {
-				flex: 0 0 130px;
-				font-style: italic;
-				color: #595959;
-			}
-			ul li a:visited {
-				color: #8e32dc;
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<div>
-				<h1>Últimas publicações</h1>
-			</div>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<>
-								<li>
-									<h3>
-										<a
-											class="post-title"
-											href={`/blog/${post.slug}/`}
-										>
-											{post.data.title}
-										</a>
-									</h3>
-								</li>
-								<FormattedDate date={post.data.pubDate} />
-							</>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<style>
-			section {
-				background-color: #f8f8f8;
-				padding: 20px;
-			}
+<Layout>
+  <Header />
+  <main id="main-content">
+    {
+      featuredPosts.length > 0 && (
+        <>
+          <section id="featured">
+            <h2>Featured</h2>
+            <ul>
+              {featuredPosts.map(({ data }) => (
+                <Card
+                  href={`/posts/${slugify(data)}`}
+                  frontmatter={data}
+                  secHeading={false}
+                />
+              ))}
+            </ul>
+          </section>
+          <Hr />
+        </>
+      )
+    }
 
-			ul {
-				list-style: none;
-				margin: 0;
-				padding: 0;
-			}
+    <section id="recent-posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        {
+          sortedPosts.map(
+            ({ data }, index) =>
+              index < 4 && (
+                <Card
+                  href={`/posts/${slugify(data)}`}
+                  frontmatter={data}
+                  secHeading={false}
+                />
+              )
+          )
+        }
+      </ul>
+      <div class="all-posts-btn-wrapper">
+        <LinkButton href="/posts">
+          All Posts
+          <svg xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+            ></path>
+          </svg>
+        </LinkButton>
+      </div>
+    </section>
+  </main>
 
-			li {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				border-bottom: 1px solid #ccc;
-				padding: 10px;
-			}
+  <Footer />
+</Layout>
 
-			li:last-child {
-				border-bottom: none;
-			}
+<style>
+  /* ===== Hero Section ===== */
+  #hero {
+    @apply pt-8 pb-6;
+  }
+  #hero h1 {
+    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+  }
+  #hero .rss-link {
+    @apply mb-6;
+  }
+  #hero .rss-icon {
+    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+  }
+  #hero p {
+    @apply my-2;
+  }
+  .social-wrapper {
+    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+  }
+  .social-links {
+    @apply mr-2 mb-1 whitespace-nowrap sm:mb-0;
+  }
 
-			.date {
-				font-size: 14px;
-				color: #999;
-				margin-right: 10px;
-			}
-
-			.post-title {
-				font-size: 24px;
-				color: #333;
-				text-decoration: none;
-				transition: color 0.3s ease;
-			}
-
-			.post-title:hover {
-				color: #0077cc;
-			}
-
-			main {
-				background-color: #FFFFFF;
-				border-radius: 15px;
-				box-shadow: 8px 8px 16px #d1c4c4, -8px -8px 16px #ffffff;
-				padding: 1em;
-			}
-
-			main > div {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				margin-bottom: 1em;
-			}
-
-			h1 {
-				font-size: 2em;
-				margin: 0;
-			}
-
-			section {
-				display: flex;
-				justify-content: center;
-			}
-
-			ul {
-				list-style: none;
-				padding: 0;
-				margin: 0;
-			}
-
-			.post-title {
-				color: #333;
-				text-decoration: none;
-				transition: color 0.2s ease-in-out;
-			}
-
-			.post-title:hover {
-				color: #7f8c8d;
-			}
-
-			.date {
-				color: #555;
-				font-size: 0.8em;
-				margin-left: 1em;
-			}
-		</style>
-	</body>
-</html>
+  /* ===== Featured & Recent Posts Sections ===== */
+  #featured,
+  #recent-posts {
+    @apply pt-12 pb-6;
+  }
+  #featured h2,
+  #recent-posts h2 {
+    @apply text-2xl font-semibold tracking-wide;
+  }
+  .all-posts-btn-wrapper {
+    @apply my-8 text-center;
+  }
+</style>
