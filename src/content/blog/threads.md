@@ -10,8 +10,7 @@ tags:
   - Threads
   - Concurrency
 ogImage: ""
-description:
-  This post aims to provide a comprehensive understanding of threads and their pratical applications. It covers the fundamentals of threads and offers pratical guidance on how to use them effectively. This post will discuss how to use threads in a program, not at the OS level.
+description: This post aims to provide a comprehensive understanding of threads and their pratical applications. It covers the fundamentals of threads and offers pratical guidance on how to use them effectively. This post will discuss how to use threads in a program, not at the OS level.
 ---
 
 <a href="https://github.com/netodotcom/threads" target="_blank" rel="noopener noreferrer">Github repository</a>
@@ -26,12 +25,12 @@ However, it's important to note that concurrent access to a database can also le
 
 # Introduction
 
-Consider the scenario of a computer with a single core where four programs are currently running simultaneaously. To deal with it, the computer must utilize concurrency and *virtual paralelism techniques to handle the four programs running simultaneousy and the associated instructions, despite the computer's capacity being limited to executing only one instruction at a time.
+Consider the scenario of a computer with a single core where four programs are currently running simultaneaously. To deal with it, the computer must utilize concurrency and \*virtual paralelism techniques to handle the four programs running simultaneousy and the associated instructions, despite the computer's capacity being limited to executing only one instruction at a time.
 The processor has a unity to thread management (Thread Management Unit - TMU) which make the management access of threads to the CPU and the Scheduling algorithms are responsable to determine which program's instruction gonna be executed next.
 
-* Virtual parallelism is a simulation of multiple processes or threads in a single processor or core.
+- Virtual parallelism is a simulation of multiple processes or threads in a single processor or core.
 
-Consider another scenario of a computer with two cores where four programs are currently running simultaneously. In this case, program 1 and program 2 are using core 1, and program 3 and program 4 are using core 2. 
+Consider another scenario of a computer with two cores where four programs are currently running simultaneously. In this case, program 1 and program 2 are using core 1, and program 3 and program 4 are using core 2.
 Let's assume that program 1 has high priority; then, it can be assigned to the entire core 1 while the other programs share core 2.
 
 # Threads synchronization
@@ -44,43 +43,42 @@ Click <a href="https://github.com/netodotcom/threads/tree/main/Conflicts" target
 
 A thread begins it's life cycle as new and remains in that state until it become runnable.
 Once the thread is ready to execute, it does so, and it's subsequent states may be affected by external factors, such as higher-priority threads that need to be executed or any exceptions that the thread may throw.
-Assuming no exception occurs, the thread is eventually terminated. It is possible to view many details about threads states using logs (Java has build-in support for thread logging through the ```java.util.logging```) and this topic will be discussed later.
+Assuming no exception occurs, the thread is eventually terminated. It is possible to view many details about threads states using logs (Java has build-in support for thread logging through the `java.util.logging`) and this topic will be discussed later.
 
 Threads can be in some states:
 
-* #### New
-    > When thread has been created but not yet started.
+- #### New
 
+  > When thread has been created but not yet started.
 
-* #### Runnable
-    > When thread has been started and ready to be executed but it may not be currently running.
+- #### Runnable
 
+  > When thread has been started and ready to be executed but it may not be currently running.
 
-* #### Blocked
-    > When thread is temporary unable to run for specific reason.
+- #### Blocked
 
+  > When thread is temporary unable to run for specific reason.
 
-* #### Waiting
-    > When thread is waiting for a condition or event to occur.
+- #### Waiting
 
+  > When thread is waiting for a condition or event to occur.
 
-* #### Timed waiting
-    > When thread is waiting for a specific period of time.
+- #### Timed waiting
 
-    <a href="https://github.com/netodotcom/threads/blob/main/Sleep/Sleep.java" target="_blank" rel="noopener noreferrer">Here</a> is an example of using the 'sleep' method to put a thread in timed waiting state.
+  > When thread is waiting for a specific period of time.
 
+  <a href="https://github.com/netodotcom/threads/blob/main/Sleep/Sleep.java" target="_blank" rel="noopener noreferrer">Here</a> is an example of using the 'sleep' method to put a thread in timed waiting state.
 
-* #### Terminated
-    > When thread finish because it was completed or termined due to an exepction or error.
+- #### Terminated
+  > When thread finish because it was completed or termined due to an exepction or error.
 
 # Priority
 
 When a thread is created, it is possible to define its priority. If no priority is defined then the thread is assigned with normal (default).
 In java, there is a priority scale ranging from 1 to 10, and constants MIN_PRIORITY (1), NORMAL_PRIORITY (5) MAX_PRIORITY (10)
-The method ```public void setPriority(x)``` can be used to set the thread's priority.
+The method `public void setPriority(x)` can be used to set the thread's priority.
 
 Although the operation system (OS) is responsible for managing and scheduling the execution of threads based on their priorities and OTHERS FACTORS. Therefore, even if a thread has a priority defined, OS has the final say in deciding which thread to execute first.
-
 
 # Scheduling
 
