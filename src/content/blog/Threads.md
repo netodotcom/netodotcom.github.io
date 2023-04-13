@@ -1,9 +1,17 @@
 ---
-title: "Threads"
-description: "This post aims to provide a comprehensive understanding of threads and their pratical applications. It covers the fundamentals of threads and offers pratical guidance on how to use them effectively. This post will discuss how to use threads in a program, not at the OS level."
-pubDate: "Mar 31 2023"
-updatedDate: "Apr 09 2023"
-references: "https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/4_Threads.html, https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/, https://os.cs.luc.edu/scheduling.html"
+author: Neto Silveira
+pubDatetime: 2023-03-10T15:22:00Z
+title: Threads
+postSlug: thread
+featured: true
+draft: false
+tags:
+  - Java
+  - Threads
+  - Concurrency
+ogImage: ""
+description:
+  This post aims to provide a comprehensive understanding of threads and their pratical applications. It covers the fundamentals of threads and offers pratical guidance on how to use them effectively. This post will discuss how to use threads in a program, not at the OS level.
 ---
 
 <a href="https://github.com/netodotcom/threads" target="_blank" rel="noopener noreferrer">Github repository</a>
