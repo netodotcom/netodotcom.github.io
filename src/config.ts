@@ -2,10 +2,10 @@ import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
   website: "https://astro-paper.pages.dev/",
-  author: "neto",
-  desc: "Blog",
-  title: "Neto Silveira",
-  ogImage: "notfound.jpg",
+  author: "Sat Naing",
+  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  title: "Neto",
+  ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 3,
 };
@@ -25,8 +25,14 @@ export const SOCIALS: SocialObjects = [
     active: true,
   },
   {
+    name: "Facebook",
+    href: "https://github.com/netodotcom",
+    linkTitle: `${SITE.title} on Facebook`,
+    active: false,
+  },
+  {
     name: "Instagram",
-    href: "https://instagram.com/nxttxw",
+    href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Instagram`,
     active: false,
   },
@@ -38,15 +44,15 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Mail",
-    href: "mailto:netodotcom@proton.me",
+    href: "mailto:yourmail@gmail.com",
     linkTitle: `Send an email to ${SITE.title}`,
     active: false,
   },
   {
     name: "Twitter",
-    href: "https://twitter.com/nxttxw",
+    href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Twitter`,
-    active: true,
+    active: false,
   },
   {
     name: "Twitch",
