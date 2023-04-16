@@ -6,6 +6,7 @@ postSlug: thread
 featured: true
 draft: false
 tags:
+  - English
   - Java
   - Threads
   - Concurrency
